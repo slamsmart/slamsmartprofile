@@ -1,5 +1,79 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import { motion } from 'framer-motion';
+
+function downloadResume() {
+  const resumeHTML = `<!DOCTYPE html>
+<html><head><meta charset="utf-8"><title>Slamet Abdullah - Resume</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; color: #1a1a1a; max-width: 800px; margin: 0 auto; padding: 40px; font-size: 14px; line-height: 1.5; }
+  h1 { font-size: 28px; margin-bottom: 4px; }
+  h2 { font-size: 18px; border-bottom: 2px solid #1a1a1a; padding-bottom: 4px; margin: 20px 0 12px; }
+  h3 { font-size: 15px; margin-bottom: 2px; }
+  .subtitle { font-size: 16px; color: #444; margin-bottom: 6px; }
+  .contact { font-size: 13px; color: #555; margin-bottom: 4px; }
+  .period { font-size: 13px; color: #666; margin-bottom: 6px; }
+  .entry { margin-bottom: 16px; }
+  ul { margin-left: 20px; margin-top: 4px; }
+  li { margin-bottom: 3px; }
+  .skills-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 24px; }
+  .skill-cat { font-weight: 600; }
+  @media print { body { padding: 20px; } }
+</style></head><body>
+<h1>Slamet Abdullah</h1>
+<p class="subtitle">Software Engineer (Web App & Public Sector Innovation)</p>
+<p class="contact">slamet.abdullah@gmail.com | +62 812-3456-1017 | github.com/slamsmart</p>
+<p class="contact">Building products that help people and make their lives easier.</p>
+
+<h2>Experience</h2>
+<div class="entry">
+  <h3>Senior Full Stack Developer — Tech Company</h3>
+  <p class="period">July 2023 – Present | Remote</p>
+  <ul>
+    <li>Developed and maintained 5+ main products (100K+ users)</li>
+    <li>Improved performance by 60% through optimization</li>
+    <li>Architected scalable microservices</li>
+    <li>Led frontend migration to React</li>
+  </ul>
+</div>
+<div class="entry">
+  <h3>Full Stack Developer — Startup Inc.</h3>
+  <p class="period">Jan 2021 – June 2023 | Remote</p>
+  <ul>
+    <li>Built 10+ web and mobile apps for clients</li>
+    <li>Delivered projects on time and within budget</li>
+  </ul>
+</div>
+
+<h2>Skills</h2>
+<div class="skills-grid">
+  <div><span class="skill-cat">Frontend:</span> TypeScript, React.js, Vue.js, Tailwind CSS</div>
+  <div><span class="skill-cat">Backend:</span> Node.js, NestJS, Golang, Python</div>
+  <div><span class="skill-cat">Mobile:</span> React Native, Expo</div>
+  <div><span class="skill-cat">Database:</span> PostgreSQL, MongoDB, MySQL, Redis</div>
+  <div><span class="skill-cat">DevOps:</span> Docker, GitHub Actions, AWS</div>
+</div>
+
+<h2>Availability</h2>
+<p>Open to full-time, part-time, or freelance positions. 10+ projects completed, 2+ years experience.</p>
+</body></html>`;
+
+  const blob = new Blob([resumeHTML], { type: 'text/html' });
+  const url = URL.createObjectURL(blob);
+  const win = window.open(url, '_blank');
+  if (win) {
+    win.onload = () => {
+      setTimeout(() => { win.print(); URL.revokeObjectURL(url); }, 300);
+    };
+  } else {
+    // Fallback: direct download as HTML
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'Slamet_Abdullah_Resume.html';
+    a.click();
+    URL.revokeObjectURL(url);
+  }
+}
 
 const experiences = [
   {
@@ -36,7 +110,7 @@ export default function Experiences() {
     >
       <div className="flex justify-between items-end mb-12">
         <h1 className="text-5xl font-bold font-handwriting">My Experience</h1>
-        <button className="sketchy-button text-base hidden sm:block">
+        <button onClick={downloadResume} className="sketchy-button text-base hidden sm:block">
           Download Resume
         </button>
       </div>
@@ -69,7 +143,7 @@ export default function Experiences() {
       </div>
       
       <div className="mt-16 text-center sm:hidden">
-        <button className="sketchy-button w-full">
+        <button onClick={downloadResume} className="sketchy-button w-full">
           Download Resume
         </button>
       </div>
