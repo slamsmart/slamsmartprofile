@@ -52,7 +52,7 @@ export default function Home() {
 
           {/* Floating hero figure */}
           <motion.img
-            src="/hero-figure.png"
+            src="/hero-figure.webp"
             alt="Slamet Abdullah illustration"
             className="w-72 md:w-96 select-none"
             style={{ mixBlendMode: 'multiply', filter: 'none', boxShadow: 'none', WebkitFilter: 'none' }}
