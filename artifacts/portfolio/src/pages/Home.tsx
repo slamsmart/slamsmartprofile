@@ -52,10 +52,10 @@ export default function Home() {
 
           {/* Floating hero figure */}
           <motion.img
-            src="/hero-figure.webp"
+            src="/hero-figure.png"
             alt="Slamet Abdullah illustration"
             className="w-72 md:w-96 select-none"
-            style={{ mixBlendMode: 'multiply', filter: 'none', boxShadow: 'none', WebkitFilter: 'none' }}
+            style={{ filter: 'none', boxShadow: 'none', WebkitFilter: 'none' }}
             animate={{ y: [0, -14, 0] }}
             transition={{ duration: 3.2, repeat: Infinity, ease: "easeInOut" }}
             draggable={false}
