@@ -1,10 +1,22 @@
 import React from 'react';
 import { Link } from 'wouter';
 import { motion } from 'framer-motion';
+import { FaXTwitter, FaGithub, FaInstagram, FaDiscord, FaYoutube, FaFacebook, FaWhatsapp, FaEnvelope } from 'react-icons/fa6';
+
+const socialLinks = [
+  { href: "mailto:slamet.abdullah@gmail.com", icon: FaEnvelope, label: "Email" },
+  { href: "https://wa.me/6281234561017", icon: FaWhatsapp, label: "WhatsApp" },
+  { href: "https://x.com/slamsmart", icon: FaXTwitter, label: "X" },
+  { href: "https://github.com/slamsmart", icon: FaGithub, label: "GitHub" },
+  { href: "https://www.instagram.com/slamsmart/", icon: FaInstagram, label: "Instagram" },
+  { href: "https://discord.com/users/1074270846408990760", icon: FaDiscord, label: "Discord" },
+  { href: "https://www.youtube.com/@SlamsmartOfficial", icon: FaYoutube, label: "YouTube" },
+  { href: "https://www.facebook.com/slamsmart.abdullah", icon: FaFacebook, label: "Facebook" },
+];
 
 const stats = [
-  { value: "15+", label: "PROJECTS COMPLETED" },
-  { value: "5 yrs", label: "YEARS EXPERIENCE" },
+  { value: "10+", label: "PROJECTS COMPLETED" },
+  { value: "2 yrs", label: "YEARS EXPERIENCE" },
   { value: "Now", label: "AVAILABLE FROM" },
 ];
 
@@ -25,41 +37,34 @@ export default function Home() {
     >
       {/* Hero */}
       <div className="flex flex-col md:flex-row items-center justify-center gap-12 md:gap-24 py-10 min-h-[70vh]">
-        <div className="relative flex-shrink-0 w-64 h-64 md:w-80 md:h-80 flex items-center justify-center">
+        <div className="relative flex-shrink-0 flex items-center justify-center">
           {/* Star doodles */}
           <svg className="absolute -top-8 -left-8 w-12 h-12 text-foreground/40" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round">
             <path d="M50 10 L50 90 M10 50 L90 50 M25 25 L75 75 M25 75 L75 25" />
           </svg>
-          <svg className="absolute top-12 -right-12 w-8 h-8 text-foreground/40" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round">
+          <svg className="absolute top-12 -right-6 w-8 h-8 text-foreground/40" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round">
             <path d="M50 20 L50 80 M20 50 L80 50 M30 30 L70 70 M30 70 L70 30" />
           </svg>
-          <svg className="absolute -bottom-4 right-10 w-10 h-10 text-foreground/40" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round">
+          <svg className="absolute -bottom-4 left-10 w-10 h-10 text-foreground/40" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round">
             <path d="M50 15 L50 85 M15 50 L85 50 M28 28 L72 72 M28 72 L72 28" />
           </svg>
 
-          {/* Stick figure */}
-          <div className="relative">
-            <div className="absolute -top-16 -right-16 bg-background border-2 border-foreground rounded-2xl p-3 shadow-[2px_2px_0_0_#1a1a1a] z-10 font-handwriting text-2xl transform rotate-3" style={{ borderRadius: '255px 15px 225px 15px / 15px 225px 15px 255px' }}>
-              Hello! 👋
-              <div className="absolute -bottom-2 left-4 w-4 h-4 bg-background border-b-2 border-r-2 border-foreground transform rotate-45" />
-            </div>
-            <svg viewBox="0 0 200 300" className="w-full h-full" fill="none" stroke="currentColor" strokeWidth="6" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M100 60 C120 60, 130 80, 130 100 C130 120, 120 140, 100 140 C80 140, 70 120, 70 100 C70 80, 80 60, 100 60 Z" />
-              <circle cx="90" cy="95" r="3" fill="currentColor" />
-              <circle cx="110" cy="95" r="3" fill="currentColor" />
-              <path d="M90 115 Q100 125 110 115" />
-              <path d="M100 140 Q105 180 100 220" />
-              <path d="M100 150 Q70 140 50 110" />
-              <path d="M100 150 Q130 160 140 190" />
-              <path d="M100 220 Q80 260 70 290" />
-              <path d="M100 220 Q120 260 130 290" />
-            </svg>
-          </div>
+          {/* Floating hero figure */}
+          <motion.img
+            src="/hero-figure.png"
+            alt="Slamet Abdullah illustration"
+            className="w-72 md:w-96 select-none"
+            style={{ filter: 'none', boxShadow: 'none', WebkitFilter: 'none' }}
+            animate={{ y: [0, -14, 0] }}
+            transition={{ duration: 3.2, repeat: Infinity, ease: "easeInOut" }}
+            draggable={false}
+          />
         </div>
 
         <div className="max-w-xl text-center md:text-left">
-          <h1 className="text-6xl md:text-8xl font-bold font-handwriting mb-4 tracking-tight">Your Name</h1>
-          <h2 className="text-3xl md:text-4xl font-handwriting text-foreground/80 mb-6">Full Stack Developer (Mobile, Web)</h2>
+          <p className="text-2xl md:text-3xl font-handwriting text-foreground/60 mb-1">Hi, I'm</p>
+          <h1 className="text-6xl md:text-8xl font-bold font-handwriting mb-4 tracking-tight">Slamet Abdullah</h1>
+          <h2 className="text-3xl md:text-4xl font-handwriting text-foreground/80 mb-6">Software Engineer (Web App & Public Sector Innovation)</h2>
           <p className="text-xl md:text-2xl leading-relaxed mb-10 text-foreground/90 max-w-lg mx-auto md:mx-0" style={{ letterSpacing: '0.01em' }}>
             Building products that help people and make their lives easier. Passionate about clean code, creative solutions, and turning ideas into reality.
           </p>
@@ -70,6 +75,22 @@ export default function Home() {
             <Link href="/experiences" data-testid="link-my-experience" className="sketchy-button text-center">
               My Experience
             </Link>
+          </div>
+
+          <div className="flex gap-5 mt-6 justify-center md:justify-start">
+            {socialLinks.map(({ href, icon: Icon, label }) => (
+              <a
+                key={href}
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={label}
+                data-testid={`hero-social-${label.toLowerCase()}`}
+                className="text-foreground/40 hover:text-foreground hover:-translate-y-1 hover:rotate-6 transition-all duration-150 inline-block"
+              >
+                <Icon size={20} />
+              </a>
+            ))}
           </div>
         </div>
       </div>
