@@ -65,7 +65,7 @@ export default function Home() {
         <div className="max-w-xl text-center md:text-left">
           <p className="text-2xl md:text-3xl font-handwriting text-foreground/60 mb-1">Hi, I'm</p>
           <h1 className="text-6xl md:text-8xl font-bold font-handwriting mb-4 tracking-tight">Slamet Abdullah</h1>
-          <h2 className="text-3xl md:text-4xl font-handwriting text-foreground/80 mb-6">Software Engineer (Web App & Public Sector Innovation)</h2>
+          <h2 className="text-3xl md:text-4xl font-handwriting text-foreground/80 mb-6">Software Engineer (Web Builder and Mobile App)</h2>
           <p className="text-xl md:text-2xl leading-relaxed mb-10 text-foreground/90 max-w-lg mx-auto md:mx-0" style={{ letterSpacing: '0.01em' }}>
             Building products that help people and make their lives easier. Passionate about clean code, creative solutions, and turning ideas into reality.
           </p>

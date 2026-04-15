@@ -21,7 +21,7 @@ function downloadResume() {
   @media print { body { padding: 20px; } }
 </style></head><body>
 <h1>Slamet Abdullah</h1>
-<p class="subtitle">Software Engineer (Web App & Public Sector Innovation)</p>
+<p class="subtitle">Software Engineer (Web Builder and Mobile App)</p>
 <p class="contact">slamet.abdullah@gmail.com | +62 812-3456-1017 | github.com/slamsmart</p>
 <p class="contact">Building products that help people and make their lives easier.</p>
 
