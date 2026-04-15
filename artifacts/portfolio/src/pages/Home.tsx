@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'wouter';
 import { motion } from 'framer-motion';
-import { FaXTwitter, FaGithub, FaInstagram, FaDiscord, FaYoutube, FaFacebook, FaWhatsapp, FaEnvelope } from 'react-icons/fa6';
+import { FaXTwitter, FaGithub, FaInstagram, FaDiscord, FaYoutube, FaFacebook, FaWhatsapp, FaEnvelope, FaThreads } from 'react-icons/fa6';
 
 const socialLinks = [
   { href: "mailto:slamet.abdullah@gmail.com", icon: FaEnvelope, label: "Email" },
@@ -9,6 +9,7 @@ const socialLinks = [
   { href: "https://x.com/slamsmart", icon: FaXTwitter, label: "X" },
   { href: "https://github.com/slamsmart", icon: FaGithub, label: "GitHub" },
   { href: "https://www.instagram.com/slamsmart/", icon: FaInstagram, label: "Instagram" },
+  { href: "https://www.threads.com/@slamsmart", icon: FaThreads, label: "Threads" },
   { href: "https://discord.com/users/1074270846408990760", icon: FaDiscord, label: "Discord" },
   { href: "https://www.youtube.com/@SlamsmartOfficial", icon: FaYoutube, label: "YouTube" },
   { href: "https://www.facebook.com/slamsmart.abdullah", icon: FaFacebook, label: "Facebook" },
